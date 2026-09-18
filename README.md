@@ -71,7 +71,25 @@ A connected dashboard can also be used to monitor device status, emergency histo
 - Git & GitHub
 
 ---
+### Other Components
+The complete Sentinel-X system also involves hardware and backend components developed as part of the team project.
 
+## 👩‍💻 My Contribution
+
+My primary contribution to the Sentinel-X project was **Frontend Development**.
+
+I worked on designing and developing the web interface, including:
+
+- Landing Page
+- Login Page
+- Dashboard
+- Device Connection interface
+- Device Settings
+- Emergency Contacts
+- Alert History
+- Profile Page
+- Logout interface
+- Responsive UI design and styling
 ## 🎯 Target Users
 
 Sentinel-X is designed for situations where quick emergency communication and location sharing can be important, including:
