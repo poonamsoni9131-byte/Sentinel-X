@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel X - Dashboard</title>
+    
+    <!-- Google Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    
+    <!-- =============================================
+         DASHBOARD LAYOUT
+    ============================================= -->
+    <div class="dashboard-wrapper">
+        
+        <!-- Fixed Left Sidebar -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+        <a class="brand-link" href="index.html">
+            <i class="fas fa-shield-alt me-2"></i>
+            Sentinel X
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link active" href="dashboard.html">
+                    <i class="fas fa-tachometer-alt me-2"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('alertHistory')">
+                    <i class="fas fa-bell me-2"></i>
+                      Alert History
+                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="emergency-contacts.html">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    Emergency Contacts
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="device-settings.html">
+                    <i class="fas fa-cog me-2"></i>
+                    Device Settings
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="device-connection.html">
+                    <i class="fas fa-link me-2"></i>
+                    Device Connection
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">
+                    <i class="fas fa-user me-2"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li class="nav-item mt-4">
+                <a class="nav-link logout-link" href="logout.html">
+                    <i class="fas fa-sign-out-alt me-2"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+</aside>
+        
+        <!-- Main Content Wrapper -->
+        <div class="main-content">
+            
+            <!-- Fixed Top Navbar -->
+            <header class="top-navbar">
+                <div class="container-fluid">
+                    <div class="navbar-content">
+                        <div class="navbar-left">
+                            <button class="sidebar-toggle" id="sidebarToggle">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="navbar-center">
+                            <div class="search-box">
+                                <input type="text" class="search-input" placeholder="Search...">
+                                <i class="fas fa-search search-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="navbar-right">
+                            <div class="navbar-icons">
+                                <button class="icon-btn notification-btn">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="badge">3</span>
+                                </button>
+                                <div class="dropdown">
+                                    <button class="icon-btn profile-btn dropdown-toggle" data-bs-toggle="dropdown">
+                                        <i class="fas fa-user-circle"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Main Content Area -->
+            <main class="content-area">
+                
+                <div id="dashboardSection" class="content-section">
+
+
+                    <div class="container-fluid">
+                    <div class="row g-4">
+                        
+                        <!-- Welcome Card -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="dashboard-card welcome-card">
+                                <div class="card-header">
+                                    <i class="fas fa-home me-2"></i>
+                                    Welcome
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="welcome-title">Welcome User</h3>
+                                    <div class="device-info">
+                                        <div class="info-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span class="info-label">Device Name:</span>
+                                            <span class="info-value">Sentinel X</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-link"></i>
+                                            <span class="info-label">Connection Status:</span>
+                                            <span class="info-value status-connected">Connected</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-battery-three-quarters"></i>
+                                            <span class="info-label">Battery:</span>
+                                            <span class="info-value">95%</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-sync"></i>
+                                            <span class="info-label">Last Sync:</span>
+                                            <span class="info-value">2 minutes ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="datetime-display">
+                                        <div class="current-date" id="currentDate"></div>
+                                        <div class="current-time" id="currentTime"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Emergency Control Card -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="dashboard-card emergency-control-card">
+                                <div class="card-header">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    Emergency Control
+                                </div>
+                                <div class="card-body">
+                                    <div class="sos-button-container">
+                                        <button class="sos-button" id="sosButton">
+                                            <i class="fas fa-bell"></i>
+                                            <span>SOS</span>
+                                        </button>
+                                    </div>
+                                    <div class="countdown-container" id="countdownContainer" style="display: none;">
+                                        <div class="countdown-timer" id="countdownTimer">10</div>
+                                        <div class="countdown-label">Seconds</div>
+                                    </div>
+                                    <button class="cancel-sos-btn" id="cancelSosBtn" style="display: none;">
+                                        <i class="fas fa-times me-2"></i>Cancel SOS
+                                    </button>
+                                    <div class="emergency-status">
+                                        <div class="status-label">Emergency Status:</div>
+                                        <div class="status-value status-safe" id="emergencyStatus">SAFE</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+                        
+                        <!-- Active Alert Card -->
+                        <div class="col-lg-12 col-md-12">
+                            <div class="dashboard-card alert-card">
+                                <div class="card-header">
+                                    <i class="fas fa-bell me-2"></i>
+                                    Active Alert
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert-placeholder">
+                                        <i class="fas fa-check-circle"></i>
+                                        <h4>No Active Alert</h4>
+                                        <p>All systems are functioning normally. No emergency alerts at this time.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Current Location Card -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="dashboard-card location-card">
+                                <div class="card-header">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Current Location
+                                </div>
+                                <div class="card-body">
+                                    <div class="map-placeholder">
+                                        <i class="fas fa-map"></i>
+                                        <span>Google Maps Placeholder</span>
+                                    </div>
+                                    <div class="location-info">
+                                        <div class="location-item">
+                                            <i class="fas fa-globe"></i>
+                                            <span class="location-label">Latitude:</span>
+                                            <span class="location-value" id="currentLatitude">28.6139</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <i class="fas fa-globe"></i>
+                                            <span class="location-label">Longitude:</span>
+                                            <span class="location-value" id="currentLongitude">77.2090</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <i class="fas fa-map-pin"></i>
+                                            <span class="location-label">Current Address:</span>
+                                            <span class="location-value" id="currentAddress">New Delhi, India</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-location" id="getLocationBtn">
+                                        <i class="fas fa-crosshairs me-2"></i>Get Current Location
+                                    </button>
+                                    <div class="manual-location">
+                                        <div class="row g-2">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control location-input" id="manualLatitude" placeholder="Manual Latitude">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control location-input" id="manualLongitude" placeholder="Manual Longitude">
+                                            </div>
+                                        </div>
+                                        <button class="btn-save-location" id="saveLocationBtn">
+                                            <i class="fas fa-save me-2"></i>Save Location
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Emergency Contacts Card -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="dashboard-card contacts-card">
+                                <div class="card-header">
+                                    <i class="fas fa-phone-alt me-2"></i>
+                                    Emergency Contacts
+                                </div>
+                                <div class="card-body">
+                                    <div class="contacts-list">
+                                        <!-- Contact 1 -->
+                                        <div class="contact-item">
+                                            <div class="contact-icon">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h5 class="contact-name">Mother</h5>
+                                                <p class="contact-phone">+91 XXXXX XXXXX</p>
+                                                <span class="contact-relationship">Relationship: Mother</span>
+                                            </div>
+                                            <div class="contact-actions">
+                                                <button class="btn-action btn-edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn-action btn-delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Contact 2 -->
+                                        <div class="contact-item">
+                                            <div class="contact-icon">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h5 class="contact-name">Father</h5>
+                                                <p class="contact-phone">+91 XXXXX XXXXX</p>
+                                                <span class="contact-relationship">Relationship: Father</span>
+                                            </div>
+                                            <div class="contact-actions">
+                                                <button class="btn-action btn-edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn-action btn-delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Contact 3 -->
+                                        <div class="contact-item">
+                                            <div class="contact-icon">
+                                                <i class="fas fa-user-shield"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h5 class="contact-name">Guardian</h5>
+                                                <p class="contact-phone">+91 XXXXX XXXXX</p>
+                                                <span class="contact-relationship">Relationship: Guardian</span>
+                                            </div>
+                                            <div class="contact-actions">
+                                                <button class="btn-action btn-edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn-action btn-delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn-add-contact" id="addContactBtn">
+                                        <i class="fas fa-plus me-2"></i>Add Contact
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Alert History Section -->
+                         
+                        <div class="col-12">
+                            <div id="alertHistory" class="content-section alert-history-section" style="display:none;">
+                                <!-- Section Header -->
+                                <div class="section-header">
+                                    <h2 class="section-title">
+                                        <i class="fas fa-bell me-2"></i>Alert History
+                                    </h2>
+                                    <p class="section-subtitle">View all previous emergency alerts</p>
+                                </div>
+                                
+                                <!-- Statistics Cards -->
+                                <div class="row g-4 mb-4">
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-icon stat-icon-primary">
+                                                <i class="fas fa-bell"></i>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-value" id="totalAlerts">10</div>
+                                                <div class="stat-label">Total Alerts</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-icon stat-icon-danger">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-value" id="activeAlerts">2</div>
+                                                <div class="stat-label">Active Alerts</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-icon stat-icon-success">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-value" id="resolvedAlerts">7</div>
+                                                <div class="stat-label">Resolved Alerts</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="stat-card">
+                                            <div class="stat-icon stat-icon-warning">
+                                                <i class="fas fa-times-circle"></i>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-value" id="falseAlarms">1</div>
+                                                <div class="stat-label">False Alarms</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Search and Filters -->
+                                <div class="filters-container">
+                                    <div class="row g-3">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="search-wrapper">
+                                                <i class="fas fa-search search-icon"></i>
+                                                <input type="text" class="search-input" id="alertSearchInput" placeholder="Search alerts...">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <select class="form-select filter-select" id="statusFilter">
+                                                <option value="">All Status</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Resolved">Resolved</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <select class="form-select filter-select" id="typeFilter">
+                                                <option value="">All Types</option>
+                                                <option value="SOS Button">SOS Button</option>
+                                                <option value="Fall Detection">Fall Detection</option>
+                                                <option value="Manual Alert">Manual Alert</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <input type="date" class="form-control filter-date" id="dateFilter">
+                                        </div>
+                                        <div class="col-lg-2 col-md-6">
+                                            <button class="btn-reset-filters" id="resetFiltersBtn">
+                                                <i class="fas fa-redo me-2"></i>Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Alert History Table -->
+                                <div class="table-container">
+                                    <div class="table-responsive">
+                                        <table class="alert-table" id="alertsTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Alert ID</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>User Name</th>
+                                                    <th>Location</th>
+                                                    <th>Alert Type</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="alertsTableBody">
+                                                <!-- Alerts will be populated by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <!-- Empty State -->
+                                    <div class="empty-state" id="emptyState" style="display: none;">
+                                        <i class="fas fa-inbox"></i>
+                                        <h4>No Alerts Found</h4>
+                                        <p>There are no alerts matching your search criteria.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <<!-- ================= Alert History Section ================= -->
+<div id="alertHistory" class="content-section" style="display:none;">
+
+    <div class="container-fluid">
+
+        <!-- Section Header -->
+        <div class="section-header mb-4">
+            <h2 class="section-title">
+                <i class="fas fa-bell me-2"></i>
+                Alert History
+            </h2>
+            <p class="section-subtitle">
+                View all previous emergency alerts
+            </p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-primary">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="totalAlerts">0</div>
+                        <div class="stat-label">Total Alerts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-danger">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="activeAlerts">0</div>
+                        <div class="stat-label">Active Alerts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="resolvedAlerts">0</div>
+                        <div class="stat-label">Resolved Alerts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-warning">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="falseAlarms">0</div>
+                        <div class="stat-label">False Alarms</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="filters-container mb-4">
+
+            <div class="row g-3">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="alertSearchInput"
+                            placeholder="Search alerts...">
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <select class="form-select filter-select" id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <select class="form-select filter-select" id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="SOS Button">SOS Button</option>
+                        <option value="Fall Detection">Fall Detection</option>
+                        <option value="Manual Alert">Manual Alert</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <input
+                        type="date"
+                        class="form-control filter-date"
+                        id="dateFilter">
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <button
+                        class="btn-reset-filters"
+                        id="resetFiltersBtn">
+                        <i class="fas fa-redo me-2"></i>
+                        Reset
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+             </div>
+            </main>
+            
+        </div>
+        
+    </div>
+ 
+    
+
+    
+    <!-- Alert Details Modal -->
+    <div class="modal fade" id="alertDetailsModal" tabindex="-1" aria-labelledby="alertDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertDetailsModalLabel">
+                        <i class="fas fa-bell me-2"></i>Alert Details
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert-details-content">
+                        <div class="detail-row">
+                            <span class="detail-label">Alert ID:</span>
+                            <span class="detail-value" id="modalAlertId">SX1001</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">User Name:</span>
+                            <span class="detail-value" id="modalUserName">Priya Sharma</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Date:</span>
+                            <span class="detail-value" id="modalDate">2024-01-15</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Time:</span>
+                            <span class="detail-value" id="modalTime">14:32:45</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">GPS Latitude:</span>
+                            <span class="detail-value" id="modalLatitude">25.4358</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">GPS Longitude:</span>
+                            <span class="detail-value" id="modalLongitude">81.8463</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Address:</span>
+                            <span class="detail-value" id="modalAddress">Prayagraj, Uttar Pradesh</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Trigger Type:</span>
+                            <span class="detail-value" id="modalTriggerType">SOS Button</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Emergency Contact Notified:</span>
+                            <span class="detail-value" id="modalContactNotified">Yes</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Alert Status:</span>
+                            <span class="detail-value" id="modalStatus">
+                                <span class="status-badge status-resolved">Resolved</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="index.js"></script>
+<script src="dashboard.js"></script>
+
+<script>
+function showSection(sectionId) {
+
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
+}
+</script>
+
+
+</body>
+</html>
