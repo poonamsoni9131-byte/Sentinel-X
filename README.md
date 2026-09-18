@@ -104,12 +104,4 @@ Domain: IoT • Embedded Systems • AI/ML • Emergency Safety
 This project is developed for educational and project-development purposes.
 
 
-### 3️⃣ Paste karne ke baad
-Neeche **Commit changes...** button hoga.
 
-Commit message mein:
-> `Update Sentinel-X README`
-
-phir **Commit changes** kar dena.
-
-**Abhi folders/files upload mat karna.** Pehle README save karo. Uske baad screenshot bhejo; next hum **project structure ko actually GitHub mein banana** start karenge. 🚀
