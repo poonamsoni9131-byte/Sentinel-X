@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel X - Emergency Contacts</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="emergency-contacts.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html" class="brand-link">
+                <i class="fas fa-shield-alt me-2"></i>
+                Sentinel X
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <ul class="nav flex-column">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+
+<a class="nav-link" href="alert-history.html">
+
+<i class="fas fa-history me-2"></i>
+
+Alert History
+
+</a>
+
+</li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="emergency-contacts.html">
+                        <i class="fas fa-phone-alt me-2"></i>
+                        Emergency Contacts
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="device-settings.html">
+                        <i class="fas fa-cog me-2"></i>
+                        Device Settings
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="device-connection.html">
+                        <i class="fas fa-link me-2"></i>
+                        Device Connection
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                        <i class="fas fa-user me-2"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li class="nav-item mt-4">
+                    <a class="nav-link logout-link" href="logout.html">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <div class="main-content">
+
+        <!-- Top Navbar -->
+
+        <header class="top-navbar">
+
+            <div class="container-fluid">
+
+                <div class="navbar-content">
+
+                    <div class="navbar-left">
+
+                        <button class="sidebar-toggle" id="sidebarToggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="navbar-center">
+
+                        <div class="search-box">
+
+                            <input type="text"
+                                   id="searchContact"
+                                   class="search-input"
+                                   placeholder="Search Contact...">
+
+                            <i class="fas fa-search search-icon"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="navbar-right">
+
+                        <button class="icon-btn">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= Content ================= -->
+
+        <main class="content-area">
+
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+
+                <div class="page-header mb-4">
+
+                    <div>
+
+                        <h2 class="page-title">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            Emergency Contacts
+                        </h2>
+
+                        <p class="page-subtitle">
+                            Manage trusted emergency contacts for instant SOS alerts.
+                        </p>
+
+                    </div>
+                </div>
+                <!-- Contact Form -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="contacts-card">
+
+            <div class="card-header">
+                <h5>
+                    <i class="fas fa-user-plus me-2"></i>
+                    Add / Edit Emergency Contact
+                </h5>
+            </div>
+
+            <div class="card-body">
+
+                <form id="contactForm">
+
+                    <input type="hidden" id="contactId">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="contactName"
+                                placeholder="Enter Full Name"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Relationship
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="relationship"
+                                required>
+
+                                <option value="">
+                                    Select Relationship
+                                </option>
+
+                                <option>Mother</option>
+                                <option>Father</option>
+                                <option>Brother</option>
+                                <option>Sister</option>
+                                <option>Friend</option>
+                                <option>Guardian</option>
+                                <option>Relative</option>
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                placeholder="+91XXXXXXXXXX"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Email (Optional)
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="example@gmail.com">
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex gap-2">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="saveContactBtn">
+
+                            <i class="fas fa-save me-2"></i>
+
+                            Save Contact
+
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="btn btn-secondary">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+                                
+                                <!-- Contacts List -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contacts-card">
+
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-address-book me-2"></i>
+                                    Emergency Contacts
+                                </h5>
+
+                                <span class="badge bg-primary" id="contactBadge">
+                                    0 Contacts
+                                </span>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+
+                                    <table class="table table-hover align-middle" id="contactsTable">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Relationship</th>
+                                                <th>Phone</th>
+                                                <th>Email</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="contactsTableBody">
+
+                                            <!-- Firebase data will appear here -->
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                                <!-- Empty State -->
+
+                                <div
+                                    id="emptyContacts"
+                                    class="text-center py-5"
+                                    style="display:none;">
+
+                                    <i class="fas fa-user-slash fa-4x text-muted mb-3"></i>
+
+                                    <h4>No Emergency Contacts</h4>
+
+                                    <p class="text-muted">
+                                        Add your first emergency contact.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Firebase -->
+<script type="module" src="firebase-config.js"></script>
+<script src="emergency-contacts.js"></script>
+
+</body>
+</html>
