@@ -90,6 +90,35 @@ I worked on designing and developing the web interface, including:
 - Profile Page
 - Logout interface
 - Responsive UI design and styling
+
+- ---
+
+## 📸 Screenshots
+
+### 🏠 Landing Page
+![Landing Page](Screenshots/landing-page.png)
+
+### 🔐 Login Page
+![Login Page](Screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard](Screenshots/dashboard.png)
+
+### 📱 Device Connection
+![Device Connection](Screenshots/device-connection.png)
+
+### ⚙️ Device Settings
+![Device Setting](Screenshots/device-setting.png)
+
+### 🚨 Emergency Contacts
+![Emergency Contacts](Screenshots/emergency-contact.png)
+
+### 📜 Alert History
+![Alert History](Screenshots/alert-history.png)
+
+### 👤 Profile
+![Profile](Screenshots/profile.png)
+
 ## 🎯 Target Users
 
 Sentinel-X is designed for situations where quick emergency communication and location sharing can be important, including:
