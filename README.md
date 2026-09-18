@@ -102,7 +102,7 @@ I worked on designing and developing the web interface, including:
 ![Login Page](Screenshots/login.png)
 
 ### 📊 Dashboard
-![Dashboard](Screenshots/dashboard.png)
+![dashboard](Screenshots/dashboard.png)
 
 ### 📱 Device Connection
 ![Device Connection](Screenshots/device-connection.png)
