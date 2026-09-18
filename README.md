@@ -72,39 +72,7 @@ A connected dashboard can also be used to monitor device status, emergency histo
 
 ---
 
-## 🏗️ System Architecture
-_
-             ┌──────────────────────┐
-             │     Sentinel-X       │
-             │   Safety Wearable    │
-             └──────────┬───────────┘
-                        │
-          ┌─────────────┼─────────────┐
-          │             │             │
-          ▼             ▼             ▼
-       Sensors       GPS/GNSS      4G LTE
-          │             │             │
-          └─────────────┼─────────────┘
-                        │
-                        ▼
-              Emergency Processing
-                        │
-              ┌─────────┴─────────┐
-              ▼                   ▼
-        SOS Notification      Location Data
-              │                   │
-              └─────────┬─────────┘
-                        ▼
-                Emergency Contacts
-                        │
-                        ▼
-                 Web Dashboard
-                        │
-                        ▼
-                    Firebase
-
-
-🎯 Target Users
+## 🎯 Target Users
 
 Sentinel-X is designed for situations where quick emergency communication and location sharing can be important, including:
 
@@ -115,7 +83,7 @@ Elderly users
 People requiring an additional personal safety device
 🔮 Future Scope
 
-Future versions of Sentinel-X can include:
+## Future versions of Sentinel-X can include:
 
 AI-based emergency event detection
 Improved health monitoring
@@ -125,13 +93,13 @@ Advanced geofencing
 Mobile and cloud notification integration
 Improved power optimization
 More compact wearable hardware
-👥 Team
+## 👥 Team
 
 Project: Sentinel-X
 
 Domain: IoT • Embedded Systems • AI/ML • Emergency Safety
 
-📄 License
+## 📄 License
 
 This project is developed for educational and project-development purposes.
 
