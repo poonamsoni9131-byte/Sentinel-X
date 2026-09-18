@@ -1,0 +1,94 @@
+/* ===================================
+   Sentinel X - Logout CSS
+=================================== */
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f5f7fb;
+
+}
+
+
+
+.card {
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+}
+
+
+
+.card h3 {
+
+    color: #111;
+
+    font-weight: 700;
+
+}
+
+
+
+.card h5 {
+
+    color: #555;
+
+    font-weight: 500;
+
+}
+
+
+
+
+
+.card i {
+
+    color: #0d6efd;
+
+    margin-right: 8px;
+
+}
+
+
+
+
+
+#logoutBtn {
+
+    padding: 10px 25px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+}
+
+
+
+
+
+.btn-secondary {
+
+    padding: 10px 25px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+}
+
+
+
+
+
+.btn:hover {
+
+    transform: translateY(-2px);
+
+}
