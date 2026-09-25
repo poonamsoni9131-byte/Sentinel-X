@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Firebase configuration
+firebase-debug.log
+.firebaserc
+
+# Build and cache files
+dist/
+build/
+.cache/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
