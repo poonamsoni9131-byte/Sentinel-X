@@ -78,20 +78,22 @@ The complete Sentinel-X system also involves hardware and backend components dev
 
 My primary contribution to the Sentinel-X project was **Frontend Development**.
 
-I worked on designing and developing the web interface, including:
+I designed and developed the user-facing web interface, including:
 
-- Landing Page
-- Login Page
-- Dashboard
-- Device Connection interface
-- Device Settings
-- Emergency Contacts
-- Alert History
-- Profile Page
-- Logout interface
-- Responsive UI design and styling
+- 🏠 Landing Page
+- 🔐 Login Page
+- 📊 Dashboard
+- 📱 Device Connection Interface
+- ⚙️ Device Settings
+- 🚨 Emergency Contacts
+- 📜 Alert History
+- 👤 Profile Page
+- 🚪 Logout Interface
+- 📱 Responsive and user-friendly UI design
 
-- ---
+I also organized the frontend files and project screenshots for documentation and presentation.
+
+> **Note:** Hardware, backend, and other system components were developed as part of the team project.
 
 ## 📸 Screenshots
 
