@@ -96,28 +96,28 @@ I worked on designing and developing the web interface, including:
 ## 📸 Screenshots
 
 ### 🏠 Landing Page
-![Landing Page](Screenshots/01-landing-page.png)
+![Landing Page](Screenshots/01-landing%20page.png)
 
 ### 🔐 Login Page
-![Login Page](Screenshots/login.png)
+![Login Page](Screenshots/02-login.png)
 
 ### 📊 Dashboard
-![dashboard](Screenshots/dashboard.png)
+![Dashboard](Screenshots/03-dashboard.png)
 
 ### 📱 Device Connection
-![Device Connection](Screenshots/device-connection.png)
+![Device Connection](Screenshots/08-device-connection.png)
 
 ### ⚙️ Device Settings
-![Device Setting](Screenshots/device-setting.png)
+![Device Setting](Screenshots/06-device-setting.png)
 
 ### 🚨 Emergency Contacts
-![Emergency Contacts](Screenshots/emergency-contact.png)
+![Emergency Contacts](Screenshots/05-emergency-contact.png)
 
 ### 📜 Alert History
-![Alert History](Screenshots/alert-history.png)
+![Alert History](Screenshots/04-Alert-history.png)
 
 ### 👤 Profile
-![Profile](Screenshots/profile.png)
+![Profile](Screenshots/09-profile.png)
 
 ## 🎯 Target Users
 
