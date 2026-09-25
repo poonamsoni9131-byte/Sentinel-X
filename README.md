@@ -96,7 +96,7 @@ I worked on designing and developing the web interface, including:
 ## 📸 Screenshots
 
 ### 🏠 Landing Page
-![Landing Page](Screenshots/landing-page.png)
+![Landing Page](Screenshots/01-landing-page.png)
 
 ### 🔐 Login Page
 ![Login Page](Screenshots/login.png)
